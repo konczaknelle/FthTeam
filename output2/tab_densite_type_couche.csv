@@ -1,0 +1,163 @@
+"type","couche","taxon","densite_moyenne_m2","ecart_type"
+"Alt","Litiere","Acarina",6.4,11.1872943804816
+"Alt","Litiere","Araneae",1.6,5.05964425626941
+"Alt","Litiere","Auchenorrhyncha",1.6,5.05964425626941
+"Alt","Litiere","Blattodea_non_termite",0,0
+"Alt","Litiere","Chilopoda",0,0
+"Alt","Litiere","Coleoptera_sum",20.8,44.6537294697269
+"Alt","Litiere","Collembola",8,11.3137084989848
+"Alt","Litiere","Diplopoda",3.2,6.74619234169254
+"Alt","Litiere","Diplura",0,0
+"Alt","Litiere","Diptera",1.6,5.05964425626941
+"Alt","Litiere","Diptera_larva",0,0
+"Alt","Litiere","Formicidae",44.8,28.0190411446692
+"Alt","Litiere","Gastropoda",0,0
+"Alt","Litiere","Heteroptera",0,0
+"Alt","Litiere","Hymenoptera_non_ant",0,0
+"Alt","Litiere","Isopoda",3.2,6.74619234169254
+"Alt","Litiere","Isoptera",62.4,85.8153055501562
+"Alt","Litiere","Lepidoptera_pupa",0,0
+"Alt","Litiere","Lumbricina_oligochaetes",0,0
+"Alt","Litiere","Nematoida",0,0
+"Alt","Litiere","Opiliones",0,0
+"Alt","Litiere","Orthoptera",1.6,5.05964425626941
+"Alt","Litiere","Pseudoscorpiones",1.6,5.05964425626941
+"Alt","Litiere","Scorpiones",0,0
+"Alt","Litiere","Symphyla",0,0
+"Alt","Litiere","Thysanoptera",0,0
+"Alt","Litiere","Tubificina_oligochaetes",0,0
+"Alt","0-10 cm","Acarina",1.6,5.05964425626941
+"Alt","0-10 cm","Araneae",11.2,15.1789327688082
+"Alt","0-10 cm","Auchenorrhyncha",0,0
+"Alt","0-10 cm","Blattodea_non_termite",1.6,5.05964425626941
+"Alt","0-10 cm","Chilopoda",16,13.0639452948436
+"Alt","0-10 cm","Coleoptera_sum",22.4,17.1994831963702
+"Alt","0-10 cm","Collembola",3.2,6.74619234169254
+"Alt","0-10 cm","Diplopoda",12.8,14.7029853355629
+"Alt","0-10 cm","Diplura",8,11.3137084989848
+"Alt","0-10 cm","Diptera",0,0
+"Alt","0-10 cm","Diptera_larva",0,0
+"Alt","0-10 cm","Formicidae",707.2,1816.62133276769
+"Alt","0-10 cm","Gastropoda",0,0
+"Alt","0-10 cm","Heteroptera",3.2,6.74619234169254
+"Alt","0-10 cm","Hymenoptera_non_ant",0,0
+"Alt","0-10 cm","Isopoda",6.4,11.1872943804816
+"Alt","0-10 cm","Isoptera",800,861.395250612504
+"Alt","0-10 cm","Lepidoptera_pupa",0,0
+"Alt","0-10 cm","Lumbricina_oligochaetes",38.4,46.6171165512793
+"Alt","0-10 cm","Nematoida",1.6,5.05964425626941
+"Alt","0-10 cm","Opiliones",8,15.5492050529208
+"Alt","0-10 cm","Orthoptera",1.6,5.05964425626941
+"Alt","0-10 cm","Pseudoscorpiones",4.8,7.72873426463437
+"Alt","0-10 cm","Scorpiones",1.6,5.05964425626941
+"Alt","0-10 cm","Symphyla",0,0
+"Alt","0-10 cm","Thysanoptera",1.6,5.05964425626941
+"Alt","0-10 cm","Tubificina_oligochaetes",3.2,6.74619234169254
+"Alt","10-20 cm","Acarina",1.6,5.05964425626941
+"Alt","10-20 cm","Araneae",3.2,6.74619234169254
+"Alt","10-20 cm","Auchenorrhyncha",0,0
+"Alt","10-20 cm","Blattodea_non_termite",1.6,5.05964425626941
+"Alt","10-20 cm","Chilopoda",6.4,8.26236447190916
+"Alt","10-20 cm","Coleoptera_sum",8,11.3137084989848
+"Alt","10-20 cm","Collembola",0,0
+"Alt","10-20 cm","Diplopoda",8,11.3137084989848
+"Alt","10-20 cm","Diplura",3.2,6.74619234169254
+"Alt","10-20 cm","Diptera",0,0
+"Alt","10-20 cm","Diptera_larva",1.6,5.05964425626941
+"Alt","10-20 cm","Formicidae",198.4,460.597486363576
+"Alt","10-20 cm","Gastropoda",0,0
+"Alt","10-20 cm","Heteroptera",4.8,10.7991769233688
+"Alt","10-20 cm","Hymenoptera_non_ant",1.6,5.05964425626941
+"Alt","10-20 cm","Isopoda",0,0
+"Alt","10-20 cm","Isoptera",0,0
+"Alt","10-20 cm","Lepidoptera_pupa",0,0
+"Alt","10-20 cm","Lumbricina_oligochaetes",24,24.1476937016998
+"Alt","10-20 cm","Nematoida",1.6,5.05964425626941
+"Alt","10-20 cm","Opiliones",4.8,15.1789327688082
+"Alt","10-20 cm","Orthoptera",0,0
+"Alt","10-20 cm","Pseudoscorpiones",0,0
+"Alt","10-20 cm","Scorpiones",0,0
+"Alt","10-20 cm","Symphyla",0,0
+"Alt","10-20 cm","Thysanoptera",0,0
+"Alt","10-20 cm","Tubificina_oligochaetes",3.2,6.74619234169254
+"DLS","Litiere","Acarina",6.4,15.4574685292687
+"DLS","Litiere","Araneae",1.6,5.05964425626941
+"DLS","Litiere","Auchenorrhyncha",0,0
+"DLS","Litiere","Blattodea_non_termite",0,0
+"DLS","Litiere","Chilopoda",0,0
+"DLS","Litiere","Coleoptera_sum",12.8,21.0649788353403
+"DLS","Litiere","Collembola",9.6,13.4923846833851
+"DLS","Litiere","Diplopoda",1.6,5.05964425626941
+"DLS","Litiere","Diplura",0,0
+"DLS","Litiere","Diptera",0,0
+"DLS","Litiere","Diptera_larva",0,0
+"DLS","Litiere","Formicidae",88,124.907076572057
+"DLS","Litiere","Gastropoda",1.6,5.05964425626941
+"DLS","Litiere","Heteroptera",0,0
+"DLS","Litiere","Hymenoptera_non_ant",1.6,5.05964425626941
+"DLS","Litiere","Isopoda",1.6,5.05964425626941
+"DLS","Litiere","Isoptera",16,32
+"DLS","Litiere","Lepidoptera_pupa",0,0
+"DLS","Litiere","Lumbricina_oligochaetes",0,0
+"DLS","Litiere","Nematoida",0,0
+"DLS","Litiere","Opiliones",0,0
+"DLS","Litiere","Orthoptera",1.6,5.05964425626941
+"DLS","Litiere","Pseudoscorpiones",6.4,20.2385770250776
+"DLS","Litiere","Scorpiones",0,0
+"DLS","Litiere","Symphyla",0,0
+"DLS","Litiere","Thysanoptera",4.8,15.1789327688082
+"DLS","Litiere","Tubificina_oligochaetes",0,0
+"DLS","0-10 cm","Acarina",9.6,8.26236447190916
+"DLS","0-10 cm","Araneae",3.2,10.1192885125388
+"DLS","0-10 cm","Auchenorrhyncha",0,0
+"DLS","0-10 cm","Blattodea_non_termite",0,0
+"DLS","0-10 cm","Chilopoda",24,33.0924630559756
+"DLS","0-10 cm","Coleoptera_sum",22.4,15.4574685292687
+"DLS","0-10 cm","Collembola",0,0
+"DLS","0-10 cm","Diplopoda",3.2,10.1192885125388
+"DLS","0-10 cm","Diplura",9.6,15.4574685292687
+"DLS","0-10 cm","Diptera",0,0
+"DLS","0-10 cm","Diptera_larva",8,13.5973853695808
+"DLS","0-10 cm","Formicidae",464,547.232227770908
+"DLS","0-10 cm","Gastropoda",0,0
+"DLS","0-10 cm","Heteroptera",3.2,6.74619234169254
+"DLS","0-10 cm","Hymenoptera_non_ant",0,0
+"DLS","0-10 cm","Isopoda",0,0
+"DLS","0-10 cm","Isoptera",470.4,890.305715283613
+"DLS","0-10 cm","Lepidoptera_pupa",1.6,5.05964425626941
+"DLS","0-10 cm","Lumbricina_oligochaetes",57.6,55.5281710285669
+"DLS","0-10 cm","Nematoida",0,0
+"DLS","0-10 cm","Opiliones",8,11.3137084989848
+"DLS","0-10 cm","Orthoptera",0,0
+"DLS","0-10 cm","Pseudoscorpiones",1.6,5.05964425626941
+"DLS","0-10 cm","Scorpiones",0,0
+"DLS","0-10 cm","Symphyla",3.2,10.1192885125388
+"DLS","0-10 cm","Thysanoptera",0,0
+"DLS","0-10 cm","Tubificina_oligochaetes",9.6,13.4923846833851
+"DLS","10-20 cm","Acarina",0,0
+"DLS","10-20 cm","Araneae",8,13.5973853695808
+"DLS","10-20 cm","Auchenorrhyncha",0,0
+"DLS","10-20 cm","Blattodea_non_termite",0,0
+"DLS","10-20 cm","Chilopoda",3.2,6.74619234169254
+"DLS","10-20 cm","Coleoptera_sum",6.4,11.1872943804816
+"DLS","10-20 cm","Collembola",0,0
+"DLS","10-20 cm","Diplopoda",0,0
+"DLS","10-20 cm","Diplura",0,0
+"DLS","10-20 cm","Diptera",0,0
+"DLS","10-20 cm","Diptera_larva",0,0
+"DLS","10-20 cm","Formicidae",108.8,88.8604398918764
+"DLS","10-20 cm","Gastropoda",0,0
+"DLS","10-20 cm","Heteroptera",0,0
+"DLS","10-20 cm","Hymenoptera_non_ant",1.6,5.05964425626941
+"DLS","10-20 cm","Isopoda",0,0
+"DLS","10-20 cm","Isoptera",1.6,5.05964425626941
+"DLS","10-20 cm","Lepidoptera_pupa",0,0
+"DLS","10-20 cm","Lumbricina_oligochaetes",17.6,15.9108628161881
+"DLS","10-20 cm","Nematoida",0,0
+"DLS","10-20 cm","Opiliones",0,0
+"DLS","10-20 cm","Orthoptera",1.6,5.05964425626941
+"DLS","10-20 cm","Pseudoscorpiones",0,0
+"DLS","10-20 cm","Scorpiones",0,0
+"DLS","10-20 cm","Symphyla",0,0
+"DLS","10-20 cm","Thysanoptera",0,0
+"DLS","10-20 cm","Tubificina_oligochaetes",6.4,11.1872943804816
