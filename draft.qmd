@@ -4,6 +4,186 @@ format: html
 editor: visual
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Données
+
+Voici ma version des truc
+
+```{r}
+
+
+library(readr)
+Databrut <- read.csv2("data_brut.csv")
+View(Databrut)
+
+```
+
+# Library
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(readr)
+```
+
+# transformation du tableau
+
+```{r}
+abondance_df <- Databrut %>%
+  summarise(across(7:34, \(x) sum(x, na.rm = TRUE))) %>% #sum de toutes les col de 7 à 34 et on applique la m^me fonc
+  pivot_longer(everything(), names_to = "taxon", values_to = "abondance") %>% #pour avoir un tableau avec une colonne et 28 lignes
+  arrange(desc(abondance)) #trier en ordre décroissant
+abondance_df
+
+data_long <- Databrut %>%
+  pivot_longer(cols = 7:34, names_to = "taxon", values_to = "abondance")
+```
+
+Ici je veux addition mes abondance pour avoir une abondance locale.
+Ensuite je créé un tableau data_long qui fait pivoter les taxons en lignes.
+ici je résume juste à une valeur par taxon et par sol comme ça je peux voir si évolution ou non.
+
+# Représentation des données brutes abondance-sol
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+resume <- data_long |> 
+  group_by(soil_type, taxon) |> 
+  summarize(total = sum(abondance), .groups = "drop")
+
+ggplot(resume, aes(x = soil_type, y = total, group = taxon, color = taxon)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Type de sol", y = "Abondance totale (échelle log10)", color = "Taxon")
+
+```
+
+# Représentation données brutes selon couche
+
+```{r}
+resu_lay <- data_long |> 
+  group_by(layer, taxon) |> 
+  summarize(total = sum(abondance), .groups = "drop")
+
+ggplot(resu_lay, aes(x = layer, y = total, group = taxon, color = taxon)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Couche", y = "Abondance totale brute", color = "Taxon")
+```
+
+# AFC
+
+```{r}
+library(tibble)
+library(FactoMineR)
+library(factoextra)
+
+Databrut$groupe <- paste(Databrut$soil_type, Databrut$layer, sep = "_")
+
+tab <- Databrut |> 
+  group_by(groupe) |> 
+  summarise(across(7:34, sum)) |> 
+  column_to_rownames("groupe")
+#créer une colonne groupe qui rassemble type et couche
+
+# Retirer les taxons trop rares (très influents en AFC)
+tab <- tab[, colSums(tab) >= 5]
+
+res_afc <- CA(tab, graph = FALSE)
+summary(res_afc)
+```
+
+Lecture : Axe 2 (38,6 %) : litière contre 20 cm.
+
+Il est construit surtout par alt_L (ctr 45 %) et dls_L (26 %), qui sont du côté positif (+1,0 et +0,8).
+Les taxons associés au côté positif : Collembola (ctr 37 %), Acarina (13 %) et Coleoptera (18 %).
+Vérification dans les données : les Collembola et les Acarina sont surtout dans la litière (5-6 et 4 individus) et presque absents ailleurs.
+Côté négatif (20 cm) : Lumbricina (−0,54) et Chilopoda (−0,39), qui sont plus profonds.
+
+Axe 1 (48,9 %) : les termites contre le reste.
+
+Isoptera contribue à elle seule à 50 % de l’axe, du côté négatif (−0,39), avec alt_10 et dls_10.
+Vérification : 794 des 844 termites sont dans les couches de 10 cm (500 en alt, 294 en dls), presque aucun en litière ni à 20 cm.
+Les couches alt_20, dls_20 et dls_L sont du côté positif.
+
+C’est la couche qui structure la communauté, plus que le type de sol.
+Sur chaque axe, les points alt et dls d’une même couche sont proches
+
+```{r}
+fviz_ca_biplot(res_afc, repel = TRUE)
+#on peut voir que relation entre les couche surtout
+```
+
+```{r}
+# contribution aux axes
+fviz_ca_biplot(res_afc, repel = TRUE)      # visualiser le plan 1-2
+fviz_contrib(res_afc, choice = "col", axes = 1)   # contribution des taxons à l'axe 1
+fviz_contrib(res_afc, choice = "col", axes = 2)
+```
+
+```{r}
+# PERMANOVA
+library(vegan)
+faune <- Databrut[, 7:34]
+adonis2(faune ~ soil_type+layer+soil_type:layer, data = Databrut, method="bray", by="terms")
+#je n'ajoute pas by terms car sinon il calcule selon l'ordre d'arrivée des facteurs et moi je veux séparemment puis interaction
+
+# Ou analyse canonique (RDA) avec test
+rda_res <- rda(faune ~ soil_type + layer+soil_type:layer, data = Databrut)
+anova(rda_res, by = "terms", method = "euclidean")
+```
+
+La PERMANOVA (*Permutational Multivariate Analysis of Variance*) répond à cette question : **la composition d’une communauté (tous les taxons à la fois) diffère-t-elle entre des groupes ?** Dans ton cas : la composition de la macrofaune est-elle différente entre Alt et DLS, entre les couches L, 10 et 20 ?
+
+Elle compare les distances entre les communautés.
+Deux échantillons sont considérés comme proches si leur composition en faune est similaire selon la mesure de distance choisie.
+
+La fonction `adonis2()` réalise une analyse de variance multivariée fondée sur des distances et un test par permutations.
+Elle répartit la variation de la communauté entre les facteurs explicatifs et calcule une statistique pseudo-F.
+
+C’est l’équivalent d’une ANOVA, mais pour **plusieurs variables réponses en même temps** (tes 28 taxons) au lieu d’une seule.
+
+L'analyse canonique RDA : **Quelle grand variation dans la composition des communautés sont associées à type de sol ou couche ?**
+
+Elle construit des axes permettant de représenter les variations de la communauté qui sont associées aux variables explicatives.
+Elle sert notamment à visualiser les relations entre espèces, échantillons et environnement.
+MAIS la RDA est sensible aux grandes abondance et bcp de zéro...
+
+Dans l'analyse canonique on voit que layer joue et pas type de sol.
+
+# Construction de modèles GLMM
+
+```{r}
+##premiers modèles mtn que j'ai un tableau clair
+library(glmmTMB)
+library(car)      # pour Anova()
+library(emmeans)
+
+mod <- glmmTMB(
+  abondance ~ soil_type * layer + (1 | monolith_ID),
+  data = data_long,
+  family = nbinom2
+)
+Anova(mod)
+summary(mod)
+
+#ANova de type III qui prend en compte le déséquilibre et qui teste implicitement à un modèle nul
+Anova(mod, type = "III")
+```
+
+Pourquoi **binomiale négative** (nbinom2) et pas Poisson?
+Car Poisson impose que variance = moy et là pas du tout.
+Binomiale négativer permet la surdispersion via l'ajout de teta qui tend vers 0 si variance très large et si tend vers l'infini alors on va vers Poisson.
+
+Anova : les couches comptent mais pas le type de sol dans l'abondance des taxons.
+
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document.
